@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FormsModule, RouterModule], // ✅ Add FormsModule here
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'HelloWorld';
   imgUrl = '../logo.jpg';
   url = 'https://www.bridgelabz.com';
+  userName = '';
 
   ngOnInit(): void {
     this.title = 'Hello from Bridgelabz.';
